@@ -1,0 +1,83 @@
+- 📁 ai-architect-core/
+  - 📁 config/
+    - 📄 dslConfig.json
+    - 📄 systemOptions.json
+  - 📁 executors/
+    - 📄 ActionRunner.js
+    - 📄 ToolExecutor.js
+  - 📁 loaders/
+    - 📄 AssistantLoader.js
+    - 📄 ConfigLoader.js
+  - 📁 managers/
+    - 📄 MemoryManager.js
+    - 📄 PromptManager.js
+    - 📄 VectorManager.js
+  - 📁 prompts/
+    - 📄 instructionsPrompt.txt
+    - 📄 systemPrompt.txt
+    - 📄 userPrompt.txt
+  - 📁 routers/
+    - 📄 AssistantRouter.js
+    - 📄 IntentRouter.js
+    - 📄 ToolRouter.js
+  - 📁 schemas/
+    - 📄 FeedbackSchema.js
+    - 📄 SessionSchema.js
+    - 📄 ToolSchema.js
+  - 📄 coreApi.js
+- 📁 client/
+  - 📁 public/
+    - 📄 index.html
+  - 📁 src/
+    - 📁 components/
+      - 📄 AssistantSelector.jsx
+      - 📄 ChatWindow.jsx
+      - 📄 FeedbackLog.jsx
+    - 📁 pages/
+      - 📄 AssistantConfigPage.jsx
+      - 📄 ChatPage.jsx
+      - 📄 FeedbackReviewPage.jsx
+    - 📁 utils/
+      - 📄 api.js
+    - 📄 App.js
+    - 📄 index.js
+  - 📄 package.json
+  - 📄 vite.config.js
+- 📁 company-integrations/
+  - 📁 lenhart-electric/
+    - 📄 assistant-config.json
+    - 📄 render.config.json
+  - 📄 LICENSE_NOTICES.md
+- 📁 deployments/
+  - 📄 docker-compose.dev.yml
+  - 📄 docker-compose.prod.yml
+  - 📄 render.yaml
+- 📁 feedback/
+  - 📄 correctionRouter.js
+  - 📄 feedbackLogger.js
+  - 📄 feedbackProcessor.js
+- 📁 personal-assistants/
+  - 📁 assistant-development/
+    - 📄 assistant.js
+    - 📄 config.json
+  - 📁 assistant-professional/
+    - 📄 assistant.js
+    - 📄 config.json
+  - 📄 README.md
+- 📁 scripts/
+  - 📄 create-assistant.js
+  - 📄 runAllReport.js
+  - 📄 seedFaqs.js
+  - 📄 seedPricebook.js
+- 📁 server/
+  - 📁 tools/
+    - 📄 generateSitemap.js
+  - 📄 index.js
+- 📁 tools/
+  - 📄 fileUpload.tool.js
+  - 📄 pricebook.tool.js
+  - 📄 schedule.tool.js
+- 📄 .env
+- 📄 LICENSE
+- 📄 PROJECT_SITEMAP.md
+- 📄 README.md

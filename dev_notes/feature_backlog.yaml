@@ -1,0 +1,38 @@
+title: Feature Backlog – AI Assistant Platform
+intent: feature_backlog
+tags:
+  - planning
+  - backlog
+  - features
+project: ai-architect-core
+source: bulk-import
+timestamp: "2025-06-14T17:01:00.000Z"
+
+high_priority:
+  - AI Developer UI with GPT-4o integration
+  - DevNoteManager finalization
+  - 3-tier assistant orchestrator
+  - Project-aware context injection
+  - Multi-source logging dashboard (local/Redis/Render)
+  - GitHub version tagging with GPT suggestions
+  - Commit panel with summaries and push support
+  - Thumbs-down correction panel (Admin)
+  - Full file generation via UI
+  - Local test + validate before deploy
+  - Smart file placement by project map
+
+planned_enhancements:
+  - File diff UI preview
+  - Terminal tools (reset/clean)
+  - Manual + AI DevNote input form
+  - Markdown/YAML validation helper
+  - Admin assistant override system
+
+future_innovations:
+  - Autonomous assistant creation (DSL + DevNote)
+  - Visual system maps (SVG, JSON)
+  - Public assistant/devnote showcase
+  - Codex-style fine-tuning mode
+  - Natural language IDE experience
+
+status: active

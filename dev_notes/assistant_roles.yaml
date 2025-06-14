@@ -1,0 +1,40 @@
+title: Assistant Roles
+intent: role_definition
+tags:
+  - assistant_roles
+  - permissions
+  - architecture
+project: ai-architect-core
+source: bulk-import
+timestamp: "2025-06-14T15:10:00.000Z"
+
+roles:
+  - name: AI Architect
+    purpose: Orchestrates assistant logic, manages routing, fallback, and memory layers.
+    access:
+      - system_state
+      - assistant_configs
+      - redis
+      - prompt_pipeline
+
+  - name: Developer Assistant
+    purpose: Assists with development tasks such as debugging, command generation, and file inspection.
+    access:
+      - filesystem_read
+      - dev_notes
+      - command_registry
+
+  - name: CSR Assistant
+    purpose: Handles customer support, product questions, and scheduling.
+    access:
+      - pricebook
+      - faq_knowledge
+      - scheduling_tools
+    llm_priority: Claude -> GPT-4
+
+  - name: Personal Task Assistant
+    purpose: Supports personal productivity, reminders, and time management.
+    access:
+      - user_memory
+      - calendar
+      - personal_context

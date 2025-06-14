@@ -1,0 +1,42 @@
+title: Prompt DSL Framework
+intent: prompt_dsl_framework
+tags: [prompts, dsl, structure]
+project: ai-architect-core
+source: structured-dev-note
+timestamp: "2025-06-14T18:05:00.000Z"
+
+summary: >
+  A modular prompt framework that uses a DSL to structure assistant input, allowing system,
+  user, instruction, and memory-driven prompts to be composed dynamically.
+
+prompt_types:
+  - type: system
+    description: Base tone and assistant role definition
+  - type: user
+    description: Formats and parses incoming user input
+  - type: instruction
+    description: Assistant-specific behavior and routing instructions
+  - type: contextual
+    description: Adds memory, DevNotes, or project context to the prompt
+  - type: tool-call
+    description: Generates structured input for tools/functions
+
+files:
+  - path: prompts/systemPrompt.js
+    role: base system logic
+  - path: prompts/userPrompt.js
+    role: user input processing
+  - path: prompts/instructionPrompt.js
+    role: assistant config logic
+
+features:
+  - DSL-driven prompt customization
+  - Context-aware prompt compilation
+  - Modular injection of memory + instructions
+
+used_by:
+  - dev assistant
+  - csr assistant
+  - orchestrator
+
+status: active

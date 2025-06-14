@@ -1,0 +1,43 @@
+title: Project Roadmap
+tags: [roadmap]
+intent: roadmap
+project: ai-architect-core
+source: structured-dev-note
+timestamp: "2025-06-14T16:35:22.000Z"
+
+phases:
+  - name: Phase 1 – Core Infrastructure
+    status: complete
+    items:
+      - Modular assistant orchestration (ai-architect-core)
+      - DevNoteManager and memory system (Mongo + Redis)
+      - AI Dev Assistant with assistant generation support
+      - Pinecone vector embedding and fuzzy DevNote lookup
+      - Manual + dynamic DevNote injection
+
+  - name: Phase 2 – Admin + Orchestration Layer
+    status: in_progress
+    items:
+      - Full routing via AssistantRouter, IntentRouter, ToolRouter
+      - DevNote feedback correction workflows
+      - Role-based assistant permissions (admin, dev, csr, etc.)
+      - Orchestrator performance metrics + fallback tracking
+      - DevNote-driven assistant context loading
+
+  - name: Phase 3 – Developer UI & Feedback Systems
+    status: planned
+    items:
+      - Unified web interface with assistant control panel
+      - Live assistant edit + preview (DSL-based prompt updates)
+      - Feedback analytics dashboard and correction interface
+      - File generator + local test runner from UI
+
+  - name: Phase 4 – Assistant Intelligence + Automation
+    status: future
+    items:
+      - Autonomous assistant creation based on project scan + DSL
+      - Toolchain chaining via orchestrator (multi-step plans)
+      - Public showcase for assistants and DevNotes
+      - GPT/Claude dynamic selection via performance scoring
+
+status: active

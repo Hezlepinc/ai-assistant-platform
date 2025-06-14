@@ -1,0 +1,39 @@
+title: System Tiers Overview
+intent: system_tiers
+tags: [system_tiers]
+project: ai-architect-core
+tiers:
+  - name: AI Architect Core
+    icon: 🧠
+    description: Central orchestrator for assistant routing, memory, and LLM control
+    responsibilities:
+      - Route requests via AssistantRouter, ToolRouter, IntentRouter
+      - Load assistant configs and prompt YAML
+      - Handle Claude → GPT-4 fallback or parallel logic
+      - Manage Redis and MongoDB memory layers
+      - Evaluate assistant performance and apply improvements
+      - Expose APIs for feedback, diagnostics, and analytics
+
+  - name: Company Integrations
+    icon: 🏢
+    description: Operational and business-facing assistants tied to external systems
+    responsibilities:
+      - CSR bot, Scheduling assistant, Sales estimator
+      - Integrate with ServiceTitan, QuickBooks, Salesforce
+      - Enforce internal logic (pricebooks, permissions)
+      - Generate reports, quotes, and booking workflows
+
+  - name: Personal Assistants
+    icon: 👤
+    description: User-owned assistants for productivity and project support
+    responsibilities:
+      - Sort emails, manage notes, track tasks
+      - Serve as dev/project assistant for individuals
+      - Integrate with Google Drive, Notion, Calendar
+      - Review DevNotes and suggest roadmap updates
+      - Maintain personal assistant memory across projects
+
+notes:
+  - All tiers rely on the AI Architect Core
+  - Memory is shared via Redis and Mongo
+  - Assistants and tools may be replicated across tiers

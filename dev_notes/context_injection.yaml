@@ -1,0 +1,34 @@
+title: Context Injection Strategy
+intent: context_injection
+tags:
+  - prompt_injection
+  - context
+  - devnote
+  - memory
+project: ai-architect-core
+source: architecture
+timestamp: "2025-06-14T15:27:00.000Z"
+
+summary: >
+  Strategy for injecting relevant DevNotes and memory into assistant prompts
+  based on session, intent, or project metadata.
+
+used_by:
+  - orchestrator
+  - assistant prompt builders
+
+pattern:
+  - Import DevNoteManager
+  - Fetch notes by intent, tags, or active project
+  - Inject results into prompt builder pipeline
+  - Apply during both system and user prompt assembly
+
+benefits:
+  - Ensures up-to-date, project-aware reasoning
+  - Enables shared knowledge across assistant types
+  - Reduces manual prompt maintenance
+
+injection_profiles:
+  - dev
+  - csr
+  - email

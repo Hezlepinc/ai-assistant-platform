@@ -1,0 +1,50 @@
+title: Memory System Architecture
+intent: memory_design
+tags:
+  - memory
+  - redis
+  - mongodb
+  - context
+project: ai-architect-core
+source: bulk-import
+timestamp: "2025-06-14T18:04:00.000Z"
+
+description: >
+  Dual-layer memory architecture using Redis for short-term session context
+  and MongoDB for long-term assistant memory, analytics, and DevNote recall.
+
+layers:
+  redis:
+    type: short_term
+    stores:
+      - session_flags
+      - temporary_context
+      - toolchain_state
+    keyed_by: sessionId
+
+  mongodb:
+    type: long_term
+    stores:
+      - DevNotes
+      - ProjectSnapshots
+      - FeedbackLog
+      - SessionMemory
+    features:
+      - indexed_lookup
+      - versioning
+      - assistant_scope
+      - project_context
+
+schemas:
+  - SessionMemory
+  - FeedbackLog
+  - DevNote
+  - ProjectSnapshot
+
+features:
+  - assistant_scoped_context
+  - project_awareness
+  - secure_token_lookup
+  - devnote_injection
+
+status: active

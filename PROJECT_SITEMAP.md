@@ -1,48 +1,41 @@
-- 📁 ai-architect-core/
-  - 📁 config/
-    - 📄 dslConfig.json
-    - 📄 systemOptions.json
-  - 📁 executors/
-    - 📄 ActionRunner.js
-    - 📄 ToolExecutor.js
-  - 📁 loaders/
-    - 📄 AssistantLoader.js
-    - 📄 ConfigLoader.js
-  - 📁 managers/
-    - 📄 MemoryManager.js
-    - 📄 PromptManager.js
-    - 📄 VectorManager.js
-  - 📁 prompts/
-    - 📄 instructionsPrompt.txt
-    - 📄 systemPrompt.txt
-    - 📄 userPrompt.txt
-  - 📁 routers/
-    - 📄 AssistantRouter.js
-    - 📄 IntentRouter.js
-    - 📄 ToolRouter.js
-  - 📁 schemas/
-    - 📄 FeedbackSchema.js
-    - 📄 SessionSchema.js
-    - 📄 ToolSchema.js
-  - 📄 coreApi.js
+# 📦 AI Assistant Platform – Project Sitemap
+
 - 📁 client/
+  - 📄 eslint.config.js
+  - 📄 index.html
+  - 📄 package-lock.json
+  - 📄 package.json
+  - 📄 postcss.config.cjs
   - 📁 public/
     - 📄 index.html
+    - 📄 vite.svg
+  - 📄 README.md
   - 📁 src/
+    - 📄 App.css
+    - 📄 App.jsx
+    - 📁 assets/
+      - 📄 react.svg
     - 📁 components/
       - 📄 AssistantSelector.jsx
+      - 📄 ChatBot.css
+      - 📄 ChatBot.jsx
+      - 📄 ChatBubble.css
+      - 📄 ChatBubble.jsx
       - 📄 ChatWindow.jsx
       - 📄 FeedbackLog.jsx
+    - 📄 custom.css
+    - 📄 index.css
+    - 📄 index.js
+    - 📄 main.jsx
     - 📁 pages/
       - 📄 AssistantConfigPage.jsx
       - 📄 ChatPage.jsx
       - 📄 FeedbackReviewPage.jsx
     - 📁 utils/
       - 📄 api.js
-    - 📄 App.js
-    - 📄 index.js
-  - 📄 package.json
+  - 📄 tailwind.config.js
   - 📄 vite.config.js
+- 📄 COMMANDS.md
 - 📁 company-integrations/
   - 📁 lenhart-electric/
     - 📄 assistant-config.json
@@ -52,10 +45,66 @@
   - 📄 docker-compose.dev.yml
   - 📄 docker-compose.prod.yml
   - 📄 render.yaml
+- 📁 dev_notes/
+  - 📄 action_runner.md
+  - 📄 action_runner.yaml
+  - 📄 ai_architect_core.md
+  - 📄 ai_architect_core.yaml
+  - 📄 ai_router_strategy.md
+  - 📄 ai_router_strategy.yaml
+  - 📄 assistant_loader.md
+  - 📄 assistant_loader.yaml
+  - 📄 assistant_roles.md
+  - 📄 assistant_roles.yaml
+  - 📄 change_log.md
+  - 📄 change_log.yaml
+  - 📄 config_loader.md
+  - 📄 config_loader.yaml
+  - 📄 context_injection.md
+  - 📄 context_injection.yaml
+  - 📄 deployment_plan.md
+  - 📄 deployment_plan.yaml
+  - 📄 dev_assistant_build.md
+  - 📄 dev_assistant_build.yaml
+  - 📄 feature_backlog.md
+  - 📄 feature_backlog.yaml
+  - 📄 feedback_analytics.md
+  - 📄 feedback_analytics.yaml
+  - 📄 future_features.md
+  - 📄 future_features.yaml
+  - 📄 memory_systems.md
+  - 📄 memory_systems.yaml
+  - 📄 orchestrator_design.md
+  - 📄 orchestrator_design.yaml
+  - 📄 plugin_registry.md
+  - 📄 plugin_registry.yaml
+  - 📄 project_personas.md
+  - 📄 project_personas.yaml
+  - 📄 project_roadmap.md
+  - 📄 project_roadmap.yaml
+  - 📄 project_setup.md
+  - 📄 project_setup.yaml
+  - 📄 prompt_dsl_framework.md
+  - 📄 prompt_dsl_framework.yaml
+  - 📄 roadmap.md
+  - 📄 roadmap.yaml
+  - 📄 system_tiers.md
+  - 📄 system_tiers.yaml
+  - 📄 tools_library.md
+  - 📄 tools_library.yaml
+  - 📄 tool_executor.md
+  - 📄 tool_executor.yaml
+  - 📄 vector_manager.md
+  - 📄 vector_manager.yaml
+  - 📄 version_tags.md
+  - 📄 version_tags.yaml
 - 📁 feedback/
   - 📄 correctionRouter.js
   - 📄 feedbackLogger.js
   - 📄 feedbackProcessor.js
+- 📄 LICENSE
+- 📄 package-lock.json
+- 📄 package.json
 - 📁 personal-assistants/
   - 📁 assistant-development/
     - 📄 assistant.js
@@ -64,20 +113,73 @@
     - 📄 assistant.js
     - 📄 config.json
   - 📄 README.md
+- 📄 README.md
 - 📁 scripts/
+  - 📄 addTagsToDevNotes.js
   - 📄 create-assistant.js
+  - 📄 exportDevNotes.js
+  - 📄 fixDevNotesMetadata.js
+  - 📄 importNotesFromFolder.js
   - 📄 runAllReport.js
+  - 📄 seedDevNotes.js
   - 📄 seedFaqs.js
   - 📄 seedPricebook.js
+  - 📄 testFuzzySearch.js
+  - 📄 upsertDevNotesToPinecone.js
+  - 📄 vectorDiagnostics.js
 - 📁 server/
-  - 📁 tools/
-    - 📄 generateSitemap.js
+  - 📁 ai-architect-core/
+    - 📁 config/
+      - 📄 dslConfig.json
+      - 📄 systemOptions.json
+    - 📄 coreApi.js
+    - 📁 executors/
+      - 📄 ActionRunner.js
+      - 📄 ToolExecutor.js
+    - 📁 loaders/
+      - 📄 AssistantLoader.js
+      - 📄 ConfigLoader.js
+    - 📁 managers/
+      - 📄 ContextInjector.js
+      - 📄 DevNoteManager.js
+      - 📄 MemoryManager.js
+      - 📄 PromptManager.js
+      - 📄 VectorManager.js
+    - 📄 orchestrator.js
+    - 📁 prompts/
+      - 📄 instructionsPrompt.txt
+      - 📄 PromptManager
+      - 📄 systemPrompt.txt
+      - 📄 userPrompt.txt
+    - 📁 routers/
+      - 📄 AssistantDispatcher.js
+      - 📄 IntentRouter.js
+      - 📄 ToolRouter.js
+    - 📁 schemas/
+      - 📄 FeedbackSchema.js
+      - 📄 SessionSchema.js
+      - 📄 ToolSchema.js
+    - 📁 utils/
+      - 📄 vectorSearchHelper.js
+  - 📁 config/
+    - 📄 db.js
+    - 📄 pineconeClient.js
+    - 📄 redisClient.js
   - 📄 index.js
+  - 📁 logic/
+    - 📄 gptChat.js
+  - 📁 models/
+    - 📄 DevNote.js
+    - 📄 FeedbackLog.js
+  - 📁 routes/
+    - 📄 assistantApiRouter.js
+    - 📄 chatRouter.js
+    - 📄 devNoteRouter.js
+    - 📄 feedbackRouter.js
+    - 📄 redisTestRouter.js
+  - 📄 testDotenv.js
 - 📁 tools/
   - 📄 fileUpload.tool.js
+  - 📄 generateSitemap.js
   - 📄 pricebook.tool.js
   - 📄 schedule.tool.js
-- 📄 .env
-- 📄 LICENSE
-- 📄 PROJECT_SITEMAP.md
-- 📄 README.md

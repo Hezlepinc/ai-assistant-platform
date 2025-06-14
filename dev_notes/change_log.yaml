@@ -1,0 +1,26 @@
+title: Change Log
+intent: system_updates
+tags:
+  - change_log
+  - dev_notes
+  - version_tracking
+project: ai-architect-core
+source: bulk-import
+timestamp: "2025-06-14T15:15:00.000Z"
+
+entries:
+  - date: 2025-06-07
+    updates:
+      - Imported and optimized all core dev notes
+      - Added YAML/MD dual dev_note support
+      - Seeded project-aware memory system
+
+  - date: 2025-06-08
+    updates:
+      - Created `feature_backlog` and expanded DevNote schemas
+
+  - date: 2025-06-14
+    updates:
+      - Cleaned metadata and resolved missing titles/intents
+      - Refined Pinecone embedding and fuzzy search pipeline
+      - Standardized assistant roles and routing logic

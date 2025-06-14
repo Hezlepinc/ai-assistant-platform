@@ -1,0 +1,61 @@
+
+---
+
+### 🧾 `project_setup.yaml`
+
+```yaml
+title: Project Setup Guide
+intent: project_setup
+tags: [setup, env, init]
+project: ai-architect-core
+source: structured-dev-note
+timestamp: "2025-06-14T17:44:00.000Z"
+
+description: >
+  Setup instructions, required commands, and environment settings to initialize
+  and maintain the AI Assistant Platform across local and production environments.
+
+core_commands:
+  - command: npm run dev
+    description: Start development server (Node, MongoDB, Redis)
+
+  - command: npm run seed:devnotes
+    description: Insert sample or starter DevNotes into MongoDB
+
+  - command: npm run import:devnotes
+    description: Bulk import all DevNotes (.md/.yaml) into MongoDB
+
+vector_commands:
+  - command: npm run upsert:devnotes
+    description: Upserts DevNotes to Pinecone as embeddings
+
+  - command: npm run clear:pinecone
+    description: Removes all vector entries from Pinecone
+
+  - command: npm run sync:notes
+    description: Syncs MongoDB and Pinecone DevNotes
+
+planned_commands:
+  - command: npm run vector:diagnostics
+    description: Prints Pinecone vector stats and tag distribution
+
+  - command: npm run vector:test-query
+    description: Tests a fuzzy search against the vector index
+
+  - command: npm run rebuild:vector-db
+    description: Full wipe and rebuild of vector DB
+
+  - command: npm run evaluate:intents
+    description: Analyze DevNotes and report missing intent vectors
+
+  - command: npm run vector:watch
+    description: Watch mode for real-time DevNote re-embedding
+
+env_vars:
+  - NODE_ENV
+  - MONGO_URI_LOCAL
+  - REDIS_URL_LOCAL
+  - PINECONE_API_KEY
+  - PINECONE_INDEX
+
+status: active

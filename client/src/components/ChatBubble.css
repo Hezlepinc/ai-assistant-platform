@@ -1,0 +1,79 @@
+.chat-bubble-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-bubble {
+  max-width: 70%;
+  margin: 6px 0;
+  padding: 8px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  line-height: 1.4;
+  display: inline-block;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+  text-align: right;
+}
+
+.chat-bubble.ai {
+  align-self: flex-start;
+  background-color: #e8e8e8;
+  text-align: left;
+}
+
+.chat-bubble a.chat-link {
+  display: inline-block;
+  margin-top: 8px;
+  text-decoration: none;
+  color: #004aad;
+  font-weight: bold;
+  background-color: #eef4ff;
+  padding: 6px 10px;
+  border-radius: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.chat-bubble a.chat-link:hover {
+  background-color: #d8e8ff;
+}
+
+.chat-debug {
+  font-size: 0.7rem;
+  color: #666;
+  margin: 6px 0 10px 12px;
+  background: #f0f0f0;
+  border-left: 3px solid #bbb;
+  border-radius: 4px;
+  padding: 6px 10px;
+  max-width: 80%;
+}
+
+.thumb-buttons {
+  margin-top: 6px;
+  display: flex;
+  gap: 8px;
+}
+
+.thumb-buttons button {
+  font-size: 1.2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.thumb-buttons button:hover {
+  opacity: 1;
+}
+
+.thanks-note {
+  font-size: 0.9rem;
+  color: green;
+  margin-top: 4px;
+  margin-left: 4px;
+}

@@ -1,0 +1,39 @@
+title: AI Architect Core
+intent: system_orchestration
+project: ai-assistant-platform
+source: manual_review
+timestamp: "2025-06-14T14:45:00.000Z"
+tags:
+  - orchestration
+  - core
+  - routing
+  - fallback
+
+summary: >
+  The AI Architect Core is the central control system of the AI Assistant Platform. It manages assistant routing, memory, prompt handling, and fallback logic across multiple assistant types and tiers.
+
+details:
+  responsibilities:
+    - Route requests to the appropriate assistant via AssistantRouter, ToolRouter, and IntentRouter
+    - Load and apply assistant-specific configuration with ConfigLoader
+    - Manage session memory and prompt injection using MemoryManager and PromptManager
+    - Control model fallback logic:
+        - Default: GPT-4 primary, Claude fallback
+        - Customer chats: Claude primary, GPT-4 fallback
+    - Maintain runtime session context, assistant bindings, and token controls
+
+  modules:
+    - routers/AssistantRouter.js
+    - routers/ToolRouter.js
+    - routers/IntentRouter.js
+    - managers/MemoryManager.js
+    - managers/PromptManager.js
+    - executors/ToolExecutor.js
+    - loaders/ConfigLoader.js
+    - schemas/AssistantConfig.yaml
+
+  future_extensions:
+    - Plugin-based toolchain extensibility
+    - Admin-controlled routing override support
+    - Performance-driven assistant routing logic
+    - Cross-assistant memory graphing for personalized assistant behavior

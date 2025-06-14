@@ -1,0 +1,38 @@
+title: Feedback Analytics System
+intent: feedback_analytics
+project: ai-architect-core
+tags:
+  - analytics
+  - feedback
+  - performance
+source: bulk-import
+timestamp: "2025-06-14T17:18:00.000Z"
+
+description: >
+  Tracks user feedback (thumbs up/down) and analyzes assistant performance over time by intent, session, and model confidence.
+
+schema: FeedbackLog
+
+fields:
+  - message
+  - intent
+  - rating: ["up", "down"]
+  - confidence: float
+  - sessionId
+  - timestamp
+
+api_route: /api/feedback/analytics
+
+features:
+  - intent_summary: true
+  - 30_day_window: true
+  - correction_panel_integration: true
+  - fallback_tracking: true
+
+future_enhancements:
+  - version_tracking: true
+  - alert_for_low_intents: true
+  - link_session_history: true
+  - assistant_training_feedback_loop: true
+
+status: active

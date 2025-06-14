@@ -1,0 +1,26 @@
+title: Version Tags
+intent: version_tags
+tags: [versioning, github]
+project: ai-assistant-platform
+
+versions:
+  - tag: v0.1-foundation
+    description: Initial scaffolding, dev notes, seeding system
+
+  - tag: v0.2-orchestration
+    description: Assistant router and AI orchestrator live
+
+  - tag: v0.3-ui
+    description: Developer interface for assistant management
+
+  - tag: v0.4-tools
+    description: Tool execution and plugin registry
+
+  - tag: v0.5-autogen
+    description: Autonomous assistant generation from DevNote + DSL
+
+  - tag: v0.6-public
+    description: Public-facing preview release with external deployment
+
+  - tag: v1.0
+    description: Full platform launch with multi-user support

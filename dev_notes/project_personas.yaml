@@ -1,0 +1,43 @@
+title: Project Personas
+intent: user_personas_definition
+tags:
+  - project_personas
+  - user_context
+  - assistant_behavior
+project: ai-architect-core
+source: bulk-import
+timestamp: "2025-06-14T18:45:00.000Z"
+
+personas:
+  - name: Project Owner
+    role: Platform architect and strategic lead
+    access: full
+    behavior_notes:
+      - Full assistant access
+      - Can override routing/memory
+      - Receives debug and orchestration-level summaries
+
+  - name: Developer Collaborator
+    role: Code contributor or assistant builder
+    access: development tools only
+    behavior_notes:
+      - Gets dev-focused instructions
+      - Limited access to admin views unless granted
+
+  - name: End User
+    role: Customer or homeowner interacting with deployed assistant
+    access: public-facing chat
+    behavior_notes:
+      - Friendly, plain-language tone
+      - Uses Claude primary, GPT fallback
+      - No system internals shown
+
+  - name: Internal Stakeholder
+    role: Admin, sales, ops personnel using assistant dashboards
+    access: admin panels
+    behavior_notes:
+      - Receives structured analytics
+      - Can modify feedback/corrections
+      - Accesses assistant usage logs
+
+status: active

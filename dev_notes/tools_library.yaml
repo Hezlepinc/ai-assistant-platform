@@ -1,0 +1,49 @@
+---
+### ✅ `tools_library.yaml`
+
+title: Tools Library
+intent: tools_library
+tags: [tools, execution]
+project: ai-architect-core
+
+purpose: >
+  Provide assistants with standardized tools that can take structured input, execute system functions, and return meaningful output. Enables assistants to take action instead of just responding.
+
+tool_categories:
+  - name: File Analysis
+    description: Scans and indexes project files for structure and keywords
+  - name: Project Utilities
+    description: Generates site maps, project snapshots, summaries
+  - name: External Services
+    description: Connects to APIs like Google Drive, calendars, etc.
+  - name: Admin Tools
+    description: Edits DevNotes, resolves feedback, improves assistant memory
+
+tool_execution_pattern:
+  input: "Structured payload"
+  output: "Standardized result"
+  file: "/executors/ToolExecutor.js"
+
+example_tools:
+  - name: scanProjectFiles
+    description: Walks a directory tree and extracts file metadata
+  - name: indexProject
+    description: Creates keyword index for faster retrieval
+  - name: generateSitemap
+    description: Generates full sitemap of file/folder structure
+  - name: snapshotProject
+    description: Captures structure, purpose, and project notes
+  - name: searchDevNotes
+    description: Finds historical notes relevant to an input question
+  - name: generateDevAssistant
+    description: Creates assistant scaffold from current project config
+
+future_tools:
+  - scheduleMeeting
+  - emailSummarizer
+  - diagramGenerator
+
+sample_input:
+  tool: scanProjectFiles
+  input:
+    directory: "C:/User/DevProjects/my-app"

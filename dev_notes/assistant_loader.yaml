@@ -1,0 +1,9 @@
+title: Assistant Loader
+intent: assistant_loader
+tags:
+  - loading
+  - config
+  - orchestration
+project: ai-architect-core
+source: structured-dev-note
+timestamp: "2025-06-14T16:05:15.812000Z"

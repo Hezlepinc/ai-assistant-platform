@@ -1,0 +1,41 @@
+title: Dev Assistant Build
+intent: assistant_development
+tags:
+  - assistant-dev
+  - devtools
+  - setup
+project: ai-architect-core
+source: bulk-import
+timestamp: "2025-06-14T16:08:00.000Z"
+
+description: >
+  Developer-focused assistant that analyzes codebases, generates assistants, and
+  supports project planning and script execution.
+
+location: personal-assistants/assistant-development/
+
+core_files:
+  - assistant.js
+  - config.json
+
+features:
+  project_indexing: true
+  assistant_generation: true
+  redis_memory: true
+  snapshot_storage: true
+
+example_requests:
+  - "What commands are available?"
+  - "Generate an assistant for this repo"
+  - "Find all TODOs"
+
+integrations:
+  mongodb: true
+  redis: true
+  orchestrator: ai-architect-core
+
+future_features:
+  run_scripts_as_tools: true
+  memory_enhanced_responses: true
+
+status: active

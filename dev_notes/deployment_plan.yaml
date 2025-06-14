@@ -1,0 +1,48 @@
+title: Deployment Plan
+intent: deployment_strategy
+tags:
+  - deployment
+  - infra
+  - production
+project: ai-architect-core
+source: bulk-import
+timestamp: "2025-06-14T15:44:00.000Z"
+
+description: >
+  Strategy for scalable cloud and local deployment environments
+  for the AI Assistant Platform using dual MongoDB/Redis config
+  and environment switching via NODE_ENV.
+
+environments:
+  development:
+    platform: local
+    mongo: mongodb://localhost:27017
+    redis: redis://localhost:6379
+    node_env: development
+    start_command: npm run dev
+
+  production:
+    platform: render or fly.io
+    mongo: mongodb+srv://<atlas-cluster>
+    redis: redis://<upstash-url>
+    node_env: production
+    start_command: npm start
+
+services:
+  mongo: MongoDB Atlas
+  redis: Upstash
+  file_storage: Google Drive (future S3 option)
+
+features:
+  auto_env_detection: true
+  graceful_fallbacks: true
+  redis_dual_support: true
+  mongo_dual_support: true
+
+cost_estimate:
+  mongo: 0-14
+  redis: 1-5
+  render: 7+
+  total: 15-25
+
+status: active

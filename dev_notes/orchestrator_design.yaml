@@ -1,0 +1,47 @@
+title: Orchestrator Design
+intent: orchestrator_overview
+tags:
+  - orchestrator
+  - control
+  - pipeline
+project: ai-architect-core
+source: bulk-import
+timestamp: "2025-06-14T18:30:00.000Z"
+
+description: >
+  Central controller for routing, memory context, tool execution,
+  and assistant-specific model fallback strategies.
+
+responsibilities:
+  - assistant_routing
+  - memory_context_injection
+  - tool_function_execution
+  - model_fallback_logic
+  - analytics_and_logging
+
+subsystems:
+  - AssistantRouter
+  - ToolRouter
+  - IntentRouter
+  - ToolExecutor
+  - ActionRunner
+
+model_fallback:
+  default:
+    primary: GPT-4
+    fallback: Claude
+  customer_chat:
+    primary: Claude
+    fallback: GPT-4
+
+memory_sources:
+  - redis: short_term_context
+  - mongodb: long_term_devnotes_and_feedback
+
+analytics:
+  - logs_model_latency
+  - tracks_tool_usage
+  - fallback_events
+  - usage_metrics_by_assistant
+
+status: active

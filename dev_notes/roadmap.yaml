@@ -1,0 +1,32 @@
+title: AI Assistant Platform Roadmap
+intent: project_roadmap
+tags: [milestones, planning]
+project: ai-assistant-platform
+phases:
+  - phase: Foundation
+    tasks:
+      - Setup project scaffolding
+      - Create dev_notes and commands.md
+      - Build initial assistant structure and configs
+
+  - phase: Orchestration
+    tasks:
+      - Build AI Router (AssistantRouter, IntentRouter, ToolRouter)
+      - Integrate DevNoteManager and PromptManager
+      - Launch assistant tiers: Dev, CSR, Personal
+      - Enable fallback logic (Claude → GPT-4 or vice versa)
+
+  - phase: UI & Feedback
+    tasks:
+      - Build unified Developer UI
+      - Add feedback analytics dashboard
+      - Enable thumbs feedback correction workflows
+      - Launch assistant creation + configuration portal
+
+  - phase: Automation & Scaling
+    tasks:
+      - Enable autonomous assistant generation via DSL + DevNotes
+      - Launch public DevNote viewer and assistant showcase
+      - Add assistant versioning and scoring analytics
+      - Orchestrate tool/assistant chaining via task goals
+      - Integrate scheduling + CRM platforms

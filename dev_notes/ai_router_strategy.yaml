@@ -1,0 +1,32 @@
+---
+### ✅ `ai_router_strategy.yaml`
+
+name: AI Router Strategy
+description: Dynamic assistant routing system using Redis, path, or token-based strategies.
+intent: assistant_routing
+project: ai-architect-core
+tags:
+  - routing
+  - assistants
+  - sessions
+core_file: routers/AssistantRouter.js
+routing_methods:
+  - type: redis
+    description: Active assistant set per session in Redis
+  - type: path
+    description: API path structure maps to assistant
+  - type: token
+    description: Role or token determines assistant routing
+examples:
+  - type: path
+    example: "/api/assistant-dev"
+  - type: redis
+    example: session_state = 'csr'
+  - type: token
+    example: token.role = 'admin'
+future_plans:
+  - enable_request_logging: true
+  - track_intent_confidence: true
+  - adaptive_routing_based_on_performance: true
+status: active
+timestamp: "2025-06-14T15:02:00.000Z"

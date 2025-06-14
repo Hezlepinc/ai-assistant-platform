@@ -1,0 +1,11 @@
+function buildPrompt({ systemPrompt, userMessage, context }) {
+  return `
+System: ${systemPrompt}
+
+User: ${userMessage}
+
+Context: ${JSON.stringify(context || {}, null, 2)}
+  `.trim();
+}
+
+module.exports = { buildPrompt };

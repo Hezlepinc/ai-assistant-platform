@@ -128,6 +128,7 @@
     - 📄 assistant.js
     - 📄 config.json
   - 📄 README.md
+- 📄 PROJECT_SITEMAP.md
 - 📄 README.md
 - 📁 scripts/
   - 📄 create-assistant.js
@@ -177,13 +178,14 @@
       - 📄 IntentRouter.js
       - 📄 ToolRouter.js
     - 📁 schemas/
-      - 📄 FeedbackSchema.js
+      - 📄 FeedbackLog.js
       - 📄 SessionSchema.js
       - 📄 ToolSchema.js
     - 📁 utils/
       - 📄 chatLogger.js
       - 📄 codeParser.js
       - 📄 dependencyTracker.js
+      - 📄 feedbackLog.js
       - 📄 fileHelper.js
       - 📄 fileService.js
       - 📄 getProjectRoot.js
@@ -209,6 +211,8 @@
     - 📄 FeedbackLog.js
     - 📄 Message.js
     - 📄 QuickActionLog.js
+  - 📁 public/
+    - 📄 widget.js
   - 📁 routes/
     - 📄 assistantApiRouter.js
     - 📄 chatRouter.js
@@ -217,6 +221,7 @@
     - 📄 feedbackRouter.js
     - 📄 fileManagerRouter.js
     - 📄 fileRouter.js
+    - 📄 inchargeRouter.js
     - 📄 projectExplorerRouter.js
     - 📄 projectInsightRouter.js
     - 📄 quickActionRouter.js

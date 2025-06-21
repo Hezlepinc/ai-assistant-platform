@@ -6,10 +6,9 @@ dotenv.config();
 import express from 'express';
 import cors from 'cors';
 
-// ✅ Config imports
 import { connectToMongo } from './ai-architect-core/config/db.js';
 import redisClient from './ai-architect-core/config/redisClient.js';
-import { initializePineconeClient, pineconeClient } from './ai-architect-core/config/pineconeClient.js';
+import { initializePineconeClient } from './ai-architect-core/config/pineconeClient.js';
 
 // ✅ Route imports
 import redisTestRouter from './routes/redisTestRouter.js';
@@ -23,7 +22,7 @@ import fileManagerRouter from './routes/fileManagerRouter.js';
 import quickActionRouter from './routes/quickActionRouter.js';
 import projectInsightRouter from './routes/projectInsightRouter.js';
 import fileRouter from './routes/fileRouter.js';
-import inchargeRouter from './routes/inchargeRouter.js'; // ✅ Incharge Assistant
+import inchargeRouter from './routes/inchargeRouter.js';
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -57,7 +56,7 @@ app.get('/api/health', async (req, res) => {
 app.use('/api/redis', redisTestRouter);
 app.use('/api/assistant', assistantApiRouter);
 app.use('/api/dev-notes', devNoteRouter);
-app.use('/api', chatRouter); // POST /api/chat
+app.use('/api', chatRouter);
 app.use('/api/feedback', feedbackRouter);
 app.use('/api/sessions', chatSessionRouter);
 app.use('/api/projects', projectExplorerRouter);
@@ -65,18 +64,13 @@ app.use('/api', fileManagerRouter);
 app.use('/api/quick-action', quickActionRouter);
 app.use('/api/project-insights', projectInsightRouter);
 app.use('/api/files', fileRouter);
-app.use('/api/incharge', inchargeRouter); // ✅ POST /api/incharge/ask
+app.use('/api/incharge', inchargeRouter);
 
 console.log('✅ Routers mounted: /api/assistant, /api/dev-notes, /api/chat, /api/feedback, /api/sessions, /api/incharge');
 
 app.listen(PORT, async () => {
   try {
-    if (process.env.MONGO_URI) {
-      await connectToMongo();
-      console.log('✅ Connected to Mongo');
-    } else {
-      console.warn('⚠️ Skipping Mongo connection — MONGO_URI not set');
-    }
+    await connectToMongo();
 
     try {
       initializePineconeClient();

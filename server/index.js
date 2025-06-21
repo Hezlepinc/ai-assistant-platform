@@ -9,7 +9,7 @@ import cors from 'cors';
 // ✅ Config imports
 import { connectToMongo } from './ai-architect-core/config/db.js';
 import redisClient from './ai-architect-core/config/redisClient.js';
-import { pineconeClient } from './ai-architect-core/config/pineconeClient.js'; // ✅ Named import
+import { initializePineconeClient, pineconeClient } from './ai-architect-core/config/pineconeClient.js';
 
 // ✅ Route imports
 import redisTestRouter from './routes/redisTestRouter.js';
@@ -78,10 +78,11 @@ app.listen(PORT, async () => {
       console.warn('⚠️ Skipping Mongo connection — MONGO_URI not set');
     }
 
-    if (pineconeClient) {
-      console.log('✅ Pinecone client initialized:', pineconeClient.describeIndexStats ? 'ready' : 'unknown');
-    } else {
-      console.warn('⚠️ Pinecone client not initialized.');
+    try {
+      initializePineconeClient();
+      console.log(`✅ Pinecone initialized for index: ${process.env.PINECONE_INDEX_NAME}`);
+    } catch (pineErr) {
+      console.warn('⚠️ Pinecone initialization failed:', pineErr.message);
     }
 
     console.log(`🚀 AI Assistant Platform server running on port ${PORT}`);

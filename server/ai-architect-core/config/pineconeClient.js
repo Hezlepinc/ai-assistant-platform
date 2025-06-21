@@ -1,11 +1,13 @@
-// server/config/pineconeClient.js
+// server/ai-architect-core/config/pineconeClient.js
 import { Pinecone } from '@pinecone-database/pinecone';
 import dotenv from 'dotenv';
 dotenv.config();
 
-const pinecone = new Pinecone({
+const pineconeClient = new Pinecone({
   apiKey: process.env.PINECONE_API_KEY,
-  environment: process.env.PINECONE_ENVIRONMENT, // e.g., 'us-east1-gcp'
+  environment: process.env.PINECONE_ENVIRONMENT,
 });
 
-export const pineconeIndex = pinecone.Index(process.env.PINECONE_INDEX_NAME); // Your index name
+const pineconeIndex = pineconeClient.Index(process.env.PINECONE_INDEX_NAME);
+
+export { pineconeClient, pineconeIndex };

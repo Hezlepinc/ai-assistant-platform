@@ -23,7 +23,7 @@ import fileManagerRouter from './routes/fileManagerRouter.js';
 import quickActionRouter from './routes/quickActionRouter.js';
 import projectInsightRouter from './routes/projectInsightRouter.js';
 import fileRouter from './routes/fileRouter.js';
-import inchargeRouter from './routes/inchargeRouter.js'; // ✅ NEW for assistant testing
+import inchargeRouter from './routes/inchargeRouter.js'; // ✅ For Incharge Assistant
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -34,7 +34,10 @@ app.use(express.json());
 // ✅ Health check route
 app.get('/api/health', async (req, res) => {
   try {
-    const redisStatus = await redisClient.ping();
+    let redisStatus = 'skipped';
+    if (redisClient?.ping) {
+      redisStatus = await redisClient.ping();
+    }
     res.json({
       status: 'ok',
       environment: process.env.NODE_ENV,
@@ -67,6 +70,16 @@ app.use('/api/incharge', inchargeRouter); // ✅ POST /api/incharge/ask
 console.log('✅ Routers mounted: /api/assistant, /api/dev-notes, /api/chat, /api/feedback, /api/sessions, /api/incharge');
 
 app.listen(PORT, async () => {
-  await connectToMongo();
-  console.log(`🚀 AI Assistant Platform server running on port ${PORT}`);
+  try {
+    if (process.env.MONGO_URI) {
+      await connectToMongo();
+      console.log('✅ Connected to Mongo');
+    } else {
+      console.warn('⚠️ Skipping Mongo connection — MONGO_URI not set');
+    }
+
+    console.log(`🚀 AI Assistant Platform server running on port ${PORT}`);
+  } catch (err) {
+    console.error('❌ Server startup error:', err.message);
+  }
 });

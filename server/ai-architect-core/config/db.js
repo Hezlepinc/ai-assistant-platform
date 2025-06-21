@@ -19,10 +19,13 @@ export const connectToMongo = async () => {
     await mongoose.connect(MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      ssl: true, // Enforce SSL for MongoDB Atlas
+      tls: true, // Ensure TLS layer
     });
     console.log(`✅ Connected to MongoDB [${NODE_ENV}]`);
   } catch (err) {
     console.error('❌ MongoDB connection error:', err.message);
+    if (err.stack) console.error(err.stack);
     process.exit(1);
   }
 };

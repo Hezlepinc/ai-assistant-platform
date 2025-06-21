@@ -1,37 +1,48 @@
+// server/ai-architect-core/orchestrator.js
+
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import ContextInjector from './managers/ContextInjector.js';
-import { getGptResponse } from '../../server/logic/gptChat.js'; // Adjusted for relative path
+import { getGptResponse } from '../../server/logic/gptChat.js';
+import { logChatMessage } from './utils/chatLogger.js'; // ✅ Ensure this exists or create a stub
 
-// Handle __dirname in ES module context
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load system-level instruction once
 const systemPromptPath = path.resolve(__dirname, 'prompts/systemPrompt.txt');
 const baseSystemPrompt = fs.readFileSync(systemPromptPath, 'utf-8');
 
 const contextInjector = new ContextInjector();
 
-export async function orchestratorChat({ message, sessionId }) {
+export async function orchestratorChat({ sessionId, message }) {
   try {
-    const session = {
-      sessionId,
-      message,
-      intent: 'general', // Temporary default
-    };
+    // STEP 1: Build dynamic context (DevNotes, project, memory, etc.)
+    const contextBlock = await contextInjector.getContextForSession(sessionId, {}, message);
+    const fullPrompt = `${baseSystemPrompt}\n\n${contextBlock}\n\nUser: ${message}\nAI:`;
 
-    // Inject relevant DevNote context
-    const contextBlock = await contextInjector.buildPromptContext(session);
-
-    // Construct the final prompt
-    const fullPrompt = `${baseSystemPrompt}\n\n${contextBlock}`;
-
+    // STEP 2: Get GPT response
     const response = await getGptResponse(message, fullPrompt);
-    return response;
+
+    // STEP 3: Log the interaction
+    await logChatMessage({ sessionId, sender: 'user', text: message });
+    await logChatMessage({ sessionId, sender: 'ai', text: response });
+
+    return {
+      response,
+      intent: 'general',
+      confidence: 1.0,
+      assistant: 'ai-architect',
+      isFallback: false,
+    };
   } catch (err) {
     console.error('❌ Orchestrator error:', err);
-    return '⚠️ Assistant failed to respond.';
+    return {
+      response: '⚠️ Assistant failed to respond.',
+      intent: 'error',
+      confidence: 0,
+      assistant: 'ai-architect',
+      isFallback: true,
+    };
   }
 }

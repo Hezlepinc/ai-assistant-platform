@@ -1,0 +1,29 @@
+{
+  "assistantName": "Incharge Electric Generator Assistant",
+  "company": "Incharge Electric",
+  "description": "Answers customer questions about generator pricing, installation, and connects them to our contact form.",
+  "primaryIntent": "generator_sales",
+  "languageModel": "claude",
+  "fallbackModel": "gpt-4",
+  "availability": "24/7",
+  "deployment": {
+    "channel": "web",
+    "type": "embedded",
+    "target": "inchargeelectric.com"
+  },
+  "routing": {
+    "priority": "company",
+    "routeKey": "inchargeelectric"
+  },
+  "toneProfile": "Friendly, professional, confident. Learns from industry leaders like Generac and Generator Supercenter. Uses conversational selling language with clear CTAs.",
+  "defaultPackage": {
+    "name": "Home Standby Essentials",
+    "price": 9975,
+    "includes": [
+      "propane connections",
+      "transfer switch",
+      "full installation"
+    ]
+  },
+  "ctaUrl": "https://inchargegenerators.com/contact/"
+}

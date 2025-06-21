@@ -1,0 +1,14 @@
+{
+  "name": "inchargeelectric-assistant",
+  "buildCommand": "npm run build",
+  "startCommand": "npm run start",
+  "env": {
+    "NODE_ENV": "production",
+    "OPENAI_API_KEY": "@openai_key",
+    "ANTHROPIC_API_KEY": "@claude_key",
+    "REDIS_URL": "@redis_url",
+    "MONGODB_URI": "@mongodb_uri"
+  },
+  "rootDir": ".",
+  "autoDeploy": true
+}

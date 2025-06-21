@@ -1,5 +1,5 @@
 import express from 'express';
-import redisClient from '../config/redisClient.js';
+import redisClient from '../ai-architect-core/config/redisClient.js';
 
 const router = express.Router();
 

@@ -1,0 +1,56 @@
+.devnotes-viewer {
+  display: flex;
+  flex-direction: column;
+  height:100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 12px;
+  background-color: #f2f2f2;
+  border-left: 1px solid #ccc;
+}
+
+.devnotes-header {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #004aad;
+  padding-left: 4px;
+}
+
+.devnotes-loading {
+  font-style: italic;
+  color: #666;
+  padding-left: 4px;
+}
+
+.devnotes-scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+  padding-left: 4px;
+  box-sizing: border-box;
+}
+
+.devnote-card {
+  margin-bottom: 12px;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.devnote-tags {
+  font-size: 0.8rem;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.devnote-body {
+  white-space: pre-wrap;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  line-height: 1.4;
+}

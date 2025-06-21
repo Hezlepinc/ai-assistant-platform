@@ -5,64 +5,63 @@ tags:
   - project_personas
   - user_context
   - assistant_behavior
-project: ai-architect-core
-source: bulk-import
-timestamp: "2025-06-14T18:45:00.000Z"
+project: ai-assistant-platform
+source: manual_update
+timestamp: "2025-06-15T10:00:00.000Z"
 ---
 
-# 👥 Project Personas
+# 👥 Project Personas – Hezlep Inc.
 
-Defines key personas that AI assistants must understand, adapt to, and serve across the AI Assistant Platform.
+This AI Assistant Platform is purpose-built for **Hezlep Inc.** to operate intelligent agents across development, sales, admin, and customer interactions. These personas define who the assistants are meant to serve and how they should behave.
 
 ---
 
 ## 1. Project Owner (You)
 
-- **Role**: Platform architect and strategic lead
+- **Role**: Business creator and system architect at Hezlep Inc.
 - **Needs**:
-  - Full control over assistant logic, tooling, memory
-  - Fast iteration and reliable automation
-  - Reports, dashboards, dev assistant visibility
+  - Total control over assistant logic, DevNote memory, and routing
+  - Ability to iterate on prompts, inject memory, and test AI pipelines
 - **Behavior Influence**:
-  - Provides elevated access, all assistant permissions
-  - Can override routing, inject memory, or edit config live
+  - Always has full access to assistant internals
+  - Can query system stats, summaries, and override behaviors live
 
 ---
 
 ## 2. Developer Collaborator
 
-- **Role**: External or internal contributor helping with code, docs, or assistant building
+- **Role**: Engineers or AI builders helping develop tools or assistants
 - **Needs**:
-  - Clear development instructions and project scaffolding
-  - Access to Dev Assistant for project inspection and tooling
+  - Access to assistant dev tools, file viewers, and prompt configs
+  - Clear onboarding, sample quick actions, and documentation
 - **Behavior Influence**:
-  - Assistant replies should simplify instructions
-  - Hide admin tools unless explicitly granted access
+  - Developer-focused assistants give guidance and clean code examples
+  - Admin tools hidden unless permissioned
 
 ---
 
-## 3. End Users (Customers, Homeowners)
+## 3. End Users (Customers / Homeowners)
 
-- **Role**: Final users interacting with production-deployed assistants (e.g., CSR)
+- **Role**: Residents using public-facing chatbots (e.g., sales or scheduling assistants)
 - **Needs**:
-  - Friendly, helpful, non-technical responses
-  - Fast answers about pricing, services, scheduling
+  - Helpful, human-like conversations about services, pricing, and support
+  - No technical jargon or backend references
 - **Behavior Influence**:
-  - Customer Chat Assistant defaults to Claude, GPT-4 as fallback
-  - Strip technical references, follow branding tone
+  - Assistants use Claude by default, GPT-4 as fallback
+  - Tone is brand-consistent, warm, and easy to understand
 
 ---
 
-## 4. Internal Stakeholders (Ops, Sales, Admin)
+## 4. Internal Stakeholders (Ops / Sales / Admin)
 
-- **Role**: Company-facing staff reviewing analytics or using feedback dashboards
+- **Role**: Hezlep staff using dashboards, reviewing feedback, or configuring bots
 - **Needs**:
-  - Admin panels, feedback stats, deployment metrics
-  - Control over assistant configurations and content
+  - Data visualization, assistant performance summaries, feedback logs
+  - Ability to train or fine-tune responses with corrections
 - **Behavior Influence**:
-  - Assistants offer structured summaries, visual dashboards
-  - Expose metrics and correction history when queried
+  - Assistants return summaries, analytics, and improvement history
+  - Admins can influence assistant direction and visibility
 
 ---
 
-_Last updated: 2025-06-14_
+_Last updated: 2025-06-15_

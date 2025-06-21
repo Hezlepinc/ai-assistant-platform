@@ -1,7 +1,7 @@
 // server/routes/assistantRouter.js
 
 import express from 'express';
-import { routeToAssistant } from '../ai-architect-core/routers/AssistantDispatcher.js';
+import { routeToAssistant } from '../ai-architect-core/routes/AssistantDispatcher.js';
 
 const router = express.Router();
 

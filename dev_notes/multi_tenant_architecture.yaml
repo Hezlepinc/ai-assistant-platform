@@ -1,0 +1,23 @@
+title: Multi-Tenant Architecture
+intent: multi-tenant assistant architecture
+summary: >
+  Guides the design and deployment of isolated AI assistants for multiple companies or brands, including security, projectId-based memory segmentation, and scalable backend organization.
+tags:
+  - multi-tenant
+  - assistant-isolation
+  - architecture
+  - dev-structure
+  - company-integrations
+relatedFiles:
+  - ai-architect-core/routers/AssistantRouter.js
+  - ai-architect-core/managers/MemoryManager.js
+  - server/index.js
+  - company-integrations/
+  - dev_notes/multi_tenant_architecture.md
+projectIdScoped: true
+secureByDefault: true
+deployment:
+  - centralized backend with segmented data
+  - frontend deployments per brand/client
+scalableTo: 100+ assistants
+priority: high

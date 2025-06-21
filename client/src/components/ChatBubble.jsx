@@ -31,10 +31,61 @@ function ChatBubble({ sender, text, isHtml, meta }) {
     }
   };
 
+  const tooltipText =
+    sender === 'ai' && meta
+      ? `🎯 ${meta.intent} | 🤖 ${meta.assistant} | 📊 ${(meta.confidence * 100).toFixed(1)}%`
+      : isUser
+      ? 'You'
+      : '';
+
+  const renderText = () => {
+    if (isHtml) {
+      return <span dangerouslySetInnerHTML={{ __html: text }} />;
+    }
+
+    const codeRegex = /```(?:[a-z]*)\n([\s\S]*?)```/g;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+    let key = 0;
+
+    while ((match = codeRegex.exec(text)) !== null) {
+      const beforeCode = text.slice(lastIndex, match.index);
+      const code = match[1];
+
+      if (beforeCode.trim()) {
+        parts.push(<p key={`text-${key++}`}>{beforeCode}</p>);
+      }
+
+      parts.push(
+        <div className="code-block-container" key={`code-${key++}`}>
+          <pre><code>{code}</code></pre>
+          <button
+            className="copy-button"
+            onClick={() => navigator.clipboard.writeText(code)}
+          >
+            📋 Copy
+          </button>
+        </div>
+      );
+
+      lastIndex = codeRegex.lastIndex;
+    }
+
+    if (lastIndex < text.length) {
+      parts.push(<p key={`text-${key++}`}>{text.slice(lastIndex)}</p>);
+    }
+
+    return parts;
+  };
+
   return (
     <div className="chat-bubble-container">
-      <div className={`chat-bubble ${isUser ? 'user' : 'ai'}`} title={isUser ? 'You' : 'AI'}>
-        {isHtml ? <span dangerouslySetInnerHTML={{ __html: text }} /> : text}
+      <div
+        className={`chat-bubble ${isUser ? 'user' : 'ai'}`}
+        title={tooltipText}
+      >
+        {renderText()}
       </div>
 
       {import.meta.env.MODE !== 'production' && sender === 'ai' && meta && (

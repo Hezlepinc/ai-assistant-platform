@@ -11,6 +11,9 @@
     - 📄 vite.svg
   - 📄 README.md
   - 📁 src/
+    - 📁 api/
+      - 📄 index.js
+    - 📄 api.js
     - 📄 App.css
     - 📄 App.jsx
     - 📁 assets/
@@ -21,8 +24,14 @@
       - 📄 ChatBot.jsx
       - 📄 ChatBubble.css
       - 📄 ChatBubble.jsx
+      - 📄 ChatSessionSidebar.css
+      - 📄 ChatSessionSidebar.jsx
       - 📄 ChatWindow.jsx
+      - 📄 DevNotesViewer.css
+      - 📄 DevNotesViewer.jsx
       - 📄 FeedbackLog.jsx
+      - 📄 FileManagerPanel.jsx
+      - 📄 QuickActionsDropdown.jsx
     - 📄 custom.css
     - 📄 index.css
     - 📄 index.js
@@ -32,11 +41,15 @@
       - 📄 ChatPage.jsx
       - 📄 FeedbackReviewPage.jsx
     - 📁 utils/
-      - 📄 api.js
   - 📄 tailwind.config.js
   - 📄 vite.config.js
 - 📄 COMMANDS.md
 - 📁 company-integrations/
+  - 📁 incharge-electric/
+    - 📄 assistant-config.json
+    - 📄 assistant.js
+    - 📄 pricebook.json
+    - 📄 render.config.json
   - 📁 lenhart-electric/
     - 📄 assistant-config.json
     - 📄 render.config.json
@@ -74,6 +87,8 @@
   - 📄 future_features.yaml
   - 📄 memory_systems.md
   - 📄 memory_systems.yaml
+  - 📄 multi_tenant_architecture.md
+  - 📄 multi_tenant_architecture.yaml
   - 📄 orchestrator_design.md
   - 📄 orchestrator_design.yaml
   - 📄 plugin_registry.md
@@ -115,10 +130,11 @@
   - 📄 README.md
 - 📄 README.md
 - 📁 scripts/
-  - 📄 addTagsToDevNotes.js
   - 📄 create-assistant.js
   - 📄 exportDevNotes.js
-  - 📄 fixDevNotesMetadata.js
+  - 📄 fullSync.js
+  - 📄 generateSitemap.js
+  - 📄 importDevNotes.js
   - 📄 importNotesFromFolder.js
   - 📄 runAllReport.js
   - 📄 seedDevNotes.js
@@ -130,7 +146,11 @@
 - 📁 server/
   - 📁 ai-architect-core/
     - 📁 config/
+      - 📄 constants.js
+      - 📄 db.js
       - 📄 dslConfig.json
+      - 📄 pineconeClient.js
+      - 📄 redisClient.js
       - 📄 systemOptions.json
     - 📄 coreApi.js
     - 📁 executors/
@@ -143,6 +163,7 @@
       - 📄 ContextInjector.js
       - 📄 DevNoteManager.js
       - 📄 MemoryManager.js
+      - 📄 ProjectContextManager.js
       - 📄 PromptManager.js
       - 📄 VectorManager.js
     - 📄 orchestrator.js
@@ -151,7 +172,7 @@
       - 📄 PromptManager
       - 📄 systemPrompt.txt
       - 📄 userPrompt.txt
-    - 📁 routers/
+    - 📁 routes/
       - 📄 AssistantDispatcher.js
       - 📄 IntentRouter.js
       - 📄 ToolRouter.js
@@ -160,26 +181,56 @@
       - 📄 SessionSchema.js
       - 📄 ToolSchema.js
     - 📁 utils/
+      - 📄 chatLogger.js
+      - 📄 codeParser.js
+      - 📄 dependencyTracker.js
+      - 📄 fileHelper.js
+      - 📄 fileService.js
+      - 📄 getProjectRoot.js
+      - 📄 pathUtils.js
+      - 📄 todoFinder.js
       - 📄 vectorSearchHelper.js
-  - 📁 config/
-    - 📄 db.js
-    - 📄 pineconeClient.js
-    - 📄 redisClient.js
+  - 📁 analysis/
+    - 📄 deepProjectSnapshot.js
+    - 📄 projectAnalyzerDeep.js
+  - 📁 controllers/
+    - 📄 handleQuickAction.js
   - 📄 index.js
   - 📁 logic/
+    - 📄 contextRegenerator.js
+    - 📄 getFileContent.js
     - 📄 gptChat.js
+    - 📄 gptClaude.js
   - 📁 models/
+    - 📄 AssistantLog.js
+    - 📄 ChatLog.js
+    - 📄 ChatSession.js
     - 📄 DevNote.js
     - 📄 FeedbackLog.js
+    - 📄 Message.js
+    - 📄 QuickActionLog.js
   - 📁 routes/
     - 📄 assistantApiRouter.js
     - 📄 chatRouter.js
+    - 📄 chatSessionRouter.js
     - 📄 devNoteRouter.js
     - 📄 feedbackRouter.js
+    - 📄 fileManagerRouter.js
+    - 📄 fileRouter.js
+    - 📄 projectExplorerRouter.js
+    - 📄 projectInsightRouter.js
+    - 📄 quickActionRouter.js
     - 📄 redisTestRouter.js
+  - 📁 services/
+    - 📄 explainFile.js
+    - 📄 generateProjectSummary.js
+    - 📄 healthCheck.js
+    - 📄 ProjectInsightService.js
+    - 📄 regenerateContext.js
+    - 📄 scanTodos.js
+    - 📄 suggestImprovements.js
   - 📄 testDotenv.js
 - 📁 tools/
   - 📄 fileUpload.tool.js
-  - 📄 generateSitemap.js
   - 📄 pricebook.tool.js
   - 📄 schedule.tool.js
